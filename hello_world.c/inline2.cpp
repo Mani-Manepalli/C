@@ -1,16 +1,57 @@
- #include<iostream>
- #include<math.h>
- using namespace std;
+#include <iostream>
+using namespace std;
+class Person {
+protected:
+    string manikanta;
+    int 50;
+    char female;
 
- double voc(double a){
+public:
+    void getPersonalDetails() {
+        cout << "Enter Name: ";
+        getline(cin, name);
+        cout << "Enter Age: ";
+        cin >> age;
+        cout << "Enter Gender (M/F): ";
+        cin >> gender;
+    }
 
-    return pow(a,3);
- }
- double vocy(double a,double b){
-   
- }
-int main(){
-   int a =1;
-   cout << voc(a);
-   return 0;
+    void displayPersonalDetails() {
+        cout << "\nName: " << name;
+        cout << "\nAge: " << age;
+        cout << "\nGender: " << gender;
+    }
+};
+
+class Patient : public Person {
+private:
+    string disease;
+    int patientID;
+
+public:
+    void getPatientDetails() {
+        getPersonalDetails();
+        cout << "Enter Patient ID: ";
+        cin >> patientID;
+        cin.ignore(); 
+        cout << "Enter Disease: ";
+        getline(cin, disease);
+    }
+
+    void displayPatientDetails() {
+        displayPersonalDetails();
+        cout << "\nPatient ID: " << patientID;
+        cout << "\nDisease: " << disease << endl;
+    }
+};
+
+int main() {
+    Patient p;
+    cout << "Enter Patient Details:\n";
+    p.getPatientDetails();
+
+    cout << "\nDisplaying Patient Details:\n";
+    p.displayPatientDetails();
+
+    return 0;
 }
