@@ -23,7 +23,7 @@ class Triangle : public Shape {
 public:
     void draw() override {
         cout << "\nDrawing a Triangle";
-    }
+    };
 };
 
 int main() {

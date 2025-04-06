@@ -15,6 +15,7 @@ class s1:public details{
     };
 
     void output(){
+
         cout << "\nName:" << name << "\nRollno:" << rollno << "\nMarks:" << marks;
     }
 
@@ -27,10 +28,14 @@ class s2:public details{
 
     };
     void output2(){
+
         cout << "\nName:" << n1 << "\nRollno:" << r1<< "\nMarks:" << m1;
+        
     }
+
 };
 int main(){
+
     s1 s1;
     s2 s2;
     s1.input();
@@ -38,4 +43,5 @@ int main(){
     s1.output();
     s2.output2();
     return 0;
+
 }
